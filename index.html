@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="电影/动漫推荐墙 - 精选6部经典电影和动漫作品，为您呈现一场视觉与心灵的双重盛宴">
+    <meta name="description" content="电影/动漫推荐墙 - 精选经典电影和动漫作品，为您呈现一场视觉与心灵的双重盛宴">
     <title>电影/动漫推荐墙 | 经典之作 · 值得一看</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,10 +13,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="progress-bar" id="progress-bar"></div>
+    <nav class="navbar">
+        <div class="navbar-brand">电影/动漫推荐墙</div>
+        <div class="navbar-links">
+            <a href="index.html">首页</a>
+            <a href="about.html">关于站长</a>
+        </div>
+    </nav>
     <header class="header">
         <div class="header-content">
             <h1 class="main-title">电影/动漫推荐墙</h1>
             <p class="subtitle">经典之作 · 值得一看</p>
+            <button class="share-btn" id="share-btn">分享</button>
         </div>
         <div class="header-decoration"></div>
     </header>
@@ -29,106 +38,28 @@
             </div>
         </section>
 
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="动画电影">动画电影</button>
+            <button class="filter-btn" data-filter="科幻电影">科幻电影</button>
+            <button class="filter-btn" data-filter="动漫">动漫</button>
+            <button class="filter-btn" data-filter="悬疑电影">悬疑电影</button>
+        </div>
+
         <section class="recommendations-section">
             <h2 class="section-title">精选推荐</h2>
             
-            <div class="card-grid">
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1578632767115-351597cf2477?w=800&h=600&fit=crop" alt="千与千寻剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">动画电影</span>
-                        <h3 class="card-title">千与千寻</h3>
-                        <p class="card-meta">宫崎骏 / 日本 / 奇幻</p>
-                        <p class="card-description">荣获奥斯卡最佳动画长片奖，讲述了千寻在神灵世界的冒险故事，关于成长、勇气和自我认同的永恒寓言。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.4/10</span>
-                        </div>
-                    </div>
-                </article>
+            <div class="card-grid" id="card-grid"></div>
+        </section>
 
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=600&fit=crop" alt="你的名字剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">动画电影</span>
-                        <h3 class="card-title">你的名字</h3>
-                        <p class="card-meta">新海诚 / 日本 / 爱情</p>
-                        <p class="card-description">跨越时空的灵魂互换，编织出一段既浪漫又令人心碎的故事，视觉效果美得令人窒息。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.2/10</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=800&h=600&fit=crop" alt="盗梦空间剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">科幻电影</span>
-                        <h3 class="card-title">盗梦空间</h3>
-                        <p class="card-meta">诺兰 / 美国 / 悬疑</p>
-                        <p class="card-description">一场游走于梦境与现实之间的视觉盛宴，多层梦境的精妙设定让人深思，每一遍观看都有新发现。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.3/10</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809?w=800&h=600&fit=crop" alt="鬼灭之刃剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">动漫</span>
-                        <h3 class="card-title">鬼灭之刃</h3>
-                        <p class="card-meta">吾峠呼世晴 / 日本 / 热血</p>
-                        <p class="card-description">现象级动漫作品，炭治郎的复仇之路，配合史诗级的"火之神神乐"战斗场景，重新定义战斗动画标准。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.1/10</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=800&h=600&fit=crop" alt="星际穿越剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">科幻电影</span>
-                        <h3 class="card-title">星际穿越</h3>
-                        <p class="card-meta">诺兰 / 美国 / 冒险</p>
-                        <p class="card-description">探索宇宙奥秘与人类情感的史诗巨作，爱与时间的主题在星际间回荡，科学与情感的完美融合。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.4/10</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&h=600&fit=crop" alt="进击的巨人剧照" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-tag">动漫</span>
-                        <h3 class="card-title">进击的巨人</h3>
-                        <p class="card-meta">諫山創 / 日本 / 悬疑</p>
-                        <p class="card-description">从绝望中寻找希望的热血巨作，层层反转的剧情让人欲罢不能，对人性、自由的深刻探讨。</p>
-                        <div class="card-rating">
-                            <span class="rating-stars">⭐</span>
-                            <span class="rating-score">9.3/10</span>
-                        </div>
-                    </div>
-                </article>
+        <section class="guestbook-section">
+            <h2 class="section-title">留言板</h2>
+            <div class="guestbook-form">
+                <input type="text" id="guest-name" placeholder="您的昵称" maxlength="20">
+                <textarea id="guest-content" placeholder="写下您的留言..." maxlength="200"></textarea>
+                <button id="submit-message">提交留言</button>
             </div>
+            <div class="guestbook-list" id="guestbook-list"></div>
         </section>
     </main>
 
@@ -136,8 +67,23 @@
         <div class="footer-content">
             <p class="copyright">© 2026 电影/动漫推荐墙 · 经典永流传</p>
             <p class="footer-note">精选推荐 · 匠心呈现</p>
+            <p><a href="about.html">关于站长</a></p>
         </div>
     </footer>
+
+    <button class="back-to-top" id="back-to-top" title="返回顶部">&#8679;</button>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close">&times;</button>
+            <button class="lightbox-prev" id="lightbox-prev">&#10094;</button>
+            <img class="lightbox-img" id="lightbox-img" src="" alt="">
+            <button class="lightbox-next" id="lightbox-next">&#10095;</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
 
     <script src="script.js"></script>
 </body>
